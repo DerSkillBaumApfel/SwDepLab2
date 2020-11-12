@@ -13,7 +13,7 @@ pool:
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '10.x'
+    versionSpec: '14.x'
   displayName: 'Install Node.js'
 
 - script:
@@ -29,12 +29,8 @@ steps:
     sudo npm audit fix
   displayName: 'npm audit and fix'
 
-- script:
-    sudo gulp
+- task: gulp@1
   displayName: 'run tests'
-- script: 
-    sudo nyc --reporter=cobertura --reporter-options mochaFile=./TEST-RESULTS.xml
-  displayName: 'generate test output'
 
 - task: PublishTestResults@2
   condition: succeededOrFailed()

@@ -32,10 +32,6 @@ steps:
 - task: gulp@1
   displayName: 'run tests'
 
-- script: 
-    sudo nyc --reporter=cobertura --reporter-options mochaFile=./TEST-RESULTS.xml
-  displayName: 'generate test output'
-
 - task: PublishTestResults@2
   condition: succeededOrFailed()
   inputs:

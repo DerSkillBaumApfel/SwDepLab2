@@ -23,7 +23,7 @@ steps:
 - script: 
     sudo npm install -g gulp
     sudo npm install -g nyc
-  displayName: 'install gulp globally'
+  displayName: 'install nyc globally'
 
 - script: 
     sudo npm audit fix
@@ -31,7 +31,11 @@ steps:
 
 - task: gulp@1
   displayName: 'run tests'
-  
+
+- script:
+    npx express-generator myExpressApp --view pug --git
+  displayName: 'building app'
+
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(System.DefaultWorkingDirectory)'

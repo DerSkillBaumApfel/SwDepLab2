@@ -29,10 +29,9 @@ steps:
     sudo npm audit fix
   displayName: 'npm audit and fix'
 
-- script: 
-    node --trace-warnings 
-    gulp
+- task: gulp@1
   displayName: 'run tests'
+
 - script: 
     sudo nyc --reporter=cobertura --reporter-options mochaFile=./TEST-RESULTS.xml
   displayName: 'generate test output'

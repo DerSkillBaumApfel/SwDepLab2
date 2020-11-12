@@ -24,9 +24,6 @@ steps:
     sudo npm audit fix
   displayName: 'npm audit and fix'
 
-- task: gulp@1
-  displayName: 'run tests'
-
 - task: ArchiveFiles@2
   inputs:
     rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
@@ -34,6 +31,9 @@ steps:
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     replaceExistingArchive: true
+
+- task: gulp@1
+  displayName: 'run tests'
 
 - task: PublishTestResults@2
   condition: succeededOrFailed()

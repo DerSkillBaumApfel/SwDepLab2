@@ -34,6 +34,9 @@ steps:
 
 - script:
     npx express-generator myExpressApp --view pug --git
+    cd myExpressApp
+    npm install
+    node ./bin/www
   displayName: 'building app'
 
 - task: ArchiveFiles@2

@@ -46,7 +46,7 @@ steps:
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(System.BuildArtifactStagingDirectory)/$(Build.BuildId).zip'
+    rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
     includeRootFolder: false
 - task: PublishBuildArtifacts@1
   inputs:

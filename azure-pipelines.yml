@@ -31,7 +31,7 @@ steps:
 
 - script: 
     node --trace-warnings 
-    sudo gulp
+    gulp
   displayName: 'run tests'
 - script: 
     sudo nyc --reporter=cobertura --reporter-options mochaFile=./TEST-RESULTS.xml

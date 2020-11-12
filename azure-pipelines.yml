@@ -33,7 +33,7 @@ steps:
     sudo gulp
   displayName: 'run tests'
 - script: 
-    sudo nyc --reporter=cobertura --reporter=html ./tests/*.js --reporter mocha-junit-reporter --reporter-options mochaFile=./TEST-RESULTS.xml
+    sudo nyc --reporter=cobertura --reporter-options mochaFile=./TEST-RESULTS.xml
   displayName: 'generate test output'
 
 - task: PublishTestResults@2

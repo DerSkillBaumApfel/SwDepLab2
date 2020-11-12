@@ -68,7 +68,7 @@ steps:
       git add package.json -A
       git commit -m "Test Commit from Azure DevOps"
       git status
-      git -c http.extraheader="AUTHORIZATION: basic ***" -u push swrepo HEAD:master
+      git -c http.extraheader="AUTHORIZATION: basic ***" push -u swrepo HEAD:master
       
       
       

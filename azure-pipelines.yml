@@ -66,7 +66,8 @@ steps:
       git config --global user.name "DerSkillBaumApfel"
       git add package.json
       git commit -m "Test Commit from Azure DevOps"
-      git push origin HEAD:master
+      git push https://39c6d9925df91da6ee4bab9abddabfcd3bb094ad@github.com/DerSkillBaumApfel/SwDepLab2.git
+      
       
 
 

@@ -62,7 +62,6 @@ steps:
 - task: CmdLine@2 # Push changes to GitHub (substitute your repo)
   inputs:
     script: |
-      git config --global url."git@github.com:".insteadOf "https://github.com/"
       git config --global user.name "DerSkillBaumApfel"
       git add package.json
       git commit -m "Test Commit from Azure DevOps"

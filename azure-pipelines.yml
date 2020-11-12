@@ -64,10 +64,10 @@ steps:
     script: |
       git config --global user.email mikey.moritz@gmx.at
       git config --global user.name "DerSkillBaumApfel"
+      git remote add swrepo https://github.com/DerSkillBaumApfel/SwDepLab2
       git add package.json -A
       git commit -m "Test Commit from Azure DevOps"
-      # git -c http.extraheader="AUTHORIZATION: basic ***" push https://github.com/DerSkillBaumApfel/SwDepLab2 HEAD:master
-      git push origin HEAD:master
+      git -c http.extraheader="AUTHORIZATION: basic ***" push swrepo HEAD:master
       
       
       

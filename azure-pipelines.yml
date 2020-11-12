@@ -63,6 +63,7 @@ steps:
   inputs:
     script: |
       git config --global user.name "DerSkillBaumApfel"
+      git config --global user.email mikey.moritz@gmx.at
       git add package.json
       git commit -m "Test Commit from Azure DevOps"
       git commit --amend --reset-author

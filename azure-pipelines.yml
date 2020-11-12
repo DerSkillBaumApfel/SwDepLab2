@@ -13,7 +13,7 @@ pool:
 steps:
 - task: NodeTool@0
   inputs:
-    versionSpec: '10.x'
+    versionSpec: '14.x'
   displayName: 'Install Node.js'
 
 - script:
@@ -29,7 +29,8 @@ steps:
     sudo npm audit fix
   displayName: 'npm audit and fix'
 
-- script:
+- script: 
+    node --trace-warnings 
     sudo gulp
   displayName: 'run tests'
 - script: 

@@ -64,7 +64,7 @@ steps:
     script: |
       git config --global user.name "DerSkillBaumApfel"
       git add package.json
-      git commit -m "Test Commit from Azure DevOps"
+      git commit -a -m "Test Commit from Azure DevOps"
       git push origin HEAD:master
 
 

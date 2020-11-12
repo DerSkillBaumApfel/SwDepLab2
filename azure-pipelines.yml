@@ -64,6 +64,7 @@ steps:
     script: |
       git config --global user.email "mikey.moritz@gmx.at"
       git config --global user.name "DerSkillBaumApfel"
+      git config --global --add url."git@github.com:".insteadOf "https://github.com/"
       git add package.json
       git commit -a -m "Test Commit from Azure DevOps"
       git push -u origin HEAD:master

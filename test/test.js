@@ -11,8 +11,8 @@ describe('String', function() {
     });
 });
 
-describe('FailingTest', function() {
-    it('should fail', function() {
-        assert.fail();
-    });
-});
+// describe('FailingTest', function() {
+//     it('should fail', function() {
+//         assert.fail();
+//     });
+// });

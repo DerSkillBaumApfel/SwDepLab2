@@ -19,8 +19,9 @@ steps:
 - script:
     sudo npm install -g --only=dev
   displayName: 'npm install in dev mode'
+
 - script:
-    sudo npm install -g npm-check-updates
+    sudo npm install
   displayName: 'update npm packages'
 
 - script: 

@@ -22,12 +22,19 @@ steps:
 
 - script: 
     sudo npm install -g gulp
-    sudo gulp
-  displayName: 'install and run gulp'
+    sudo npm install -g nyc
+  displayName: 'install gulp globally'
 
 - script: 
     sudo npm audit fix
   displayName: 'npm audit and fix'
+
+- script:
+    sudo gulp
+  displayName: 'run tests'
+- script: 
+    sudo nyc --reporter=cobertura --reporter=html ./tests/*.js --reporter mocha-junit-reporter --reporter-options mochaFile=./TEST-RESULTS.xml
+  displayName: 'generate test output'
 
 - task: PublishTestResults@2
   condition: succeededOrFailed()

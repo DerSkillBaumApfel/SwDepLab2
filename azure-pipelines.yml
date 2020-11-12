@@ -18,6 +18,7 @@ steps:
 
 - script: |
     sudo npm install --only=dev
+    sudo gulp
     sudo npm run build
   displayName: 'npm install and build (including tests with custom build command)'
 

@@ -46,9 +46,13 @@ steps:
 
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
+    rootFolderOrFile: '$(System.BuildArtifactStagingDirectory)/$(Build.BuildId).zip'
     includeRootFolder: false
-
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+    ArtifactName: 'Lab2Build'
+    publishLocation: 'Container'
 
 
 

@@ -21,26 +21,15 @@ steps:
   displayName: 'npm install in dev mode'
 
 - script: 
-    sudo npm install -g gulp
-    sudo npm install -g nyc
-  displayName: 'install nyc globally'
-
-- script: 
     sudo npm audit fix
   displayName: 'npm audit and fix'
 
 - task: gulp@1
   displayName: 'run tests'
 
-- script: |
-    npx express-generator myExpressApp --view pug --git
-    cd myExpressApp
-    npm install
-  displayName: 'building app'
-
 - task: ArchiveFiles@2
   inputs:
-    rootFolderOrFile: '$(System.DefaultWorkingDirectory)/myExpressApp'
+    rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
     includeRootFolder: false
     archiveType: 'zip'
     archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'

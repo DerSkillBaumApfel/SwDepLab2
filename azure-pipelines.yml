@@ -62,8 +62,9 @@ steps:
 - task: CmdLine@2 # Push changes to GitHub (substitute your repo)
   inputs:
     script: |
+      git config --global user.name "DerSkillBaumApfel"
       git add package.json
       git commit -m "Test Commit from Azure DevOps"
-      git push origin
+      git push origin HEAD:master
 
 

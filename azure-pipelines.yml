@@ -17,16 +17,13 @@ steps:
   displayName: 'Install Node.js'
 
 - script:
-    sudo npm install -g --only=dev
+    sudo npm install --only=dev
   displayName: 'npm install in dev mode'
 
-- script:
-    sudo npm install
-  displayName: 'update npm packages'
-
 - script: 
+    sudo npm install -g gulp
     sudo gulp
-  displayName: 'install gulp'
+  displayName: 'install and run gulp'
 
 - script: 
     sudo npm run build

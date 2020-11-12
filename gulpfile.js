@@ -3,7 +3,7 @@ var mocha = require('gulp-mocha');
 var istanbul = require('gulp-istanbul')
 
 gulp.task('default', function () {
-    gulp.src('tests/**/*.js')
+    return gulp.src('tests/**/*.js')
         .pipe(mocha({
           reporter: 'mocha-junit-reporter',
           reporterOptions: {

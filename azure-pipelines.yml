@@ -64,8 +64,9 @@ steps:
     script: |
       git config --global user.email "mikey.moritz@gmx.at"
       git config --global user.name "DerSkillBaumApfel"
+      git remote add origin https://github.com/DerSkillBaumApfel/SwDepLab2.git
       git add package.json
       git commit -a -m "Test Commit from Azure DevOps"
-      git push -u origin https://github.com/DerSkillBaumApfel/SwDepLab2/:master
+      git push -u origin master
 
 

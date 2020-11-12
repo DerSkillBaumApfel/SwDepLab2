@@ -8,8 +8,13 @@
     "name": "Moe"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "mocha": "^8.2.1"
+    "express": "^4.16.1",
+    "mocha": "^8.2.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "pug": "2.0.0-beta11"
   },
   "devDependencies": {
     "gulp": "^4.0.2",
@@ -19,6 +24,7 @@
     "nyc": "^15.1.0" 
   },
   "scripts": {
-    "build": "nyc --reporter=cobertura --reporter=html ./node_modules/.bin/mocha tests/**/*.js --reporter mocha-junit-reporter --reporter-options mochaFile=./TEST-RESULTS.xml"
+    "build": "nyc --reporter=cobertura --reporter=html ./node_modules/.bin/mocha tests/**/*.js --reporter mocha-junit-reporter --reporter-options mochaFile=./TEST-RESULTS.xml",
+    "start": "node ./bin/www"
   }
 }

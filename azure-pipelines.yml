@@ -16,11 +16,17 @@ steps:
     versionSpec: '10.x'
   displayName: 'Install Node.js'
 
-- script: |
+- script:
     sudo npm install --only=dev
+  displayName: 'npm install in dev mode'
+
+- script: 
     sudo gulp
+  displayName: 'install gulp'
+
+- script: 
     sudo npm run build
-  displayName: 'npm install and build (including tests with custom build command)'
+  displayName: 'build app and run tests'
 
 - script: 
     sudo npm audit fix

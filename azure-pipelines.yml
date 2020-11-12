@@ -59,16 +59,7 @@ steps:
     rootFolderOrFile: '$(System.DefaultWorkingDirectory)'
     includeRootFolder: false
 
-- task: CmdLine@2 # Push changes to GitHub (substitute your repo)
-  inputs:
-    script: |
-      git config --global user.email mikey.moritz@gmx.at
-      git config --global user.name "DerSkillBaumApfel"
-      git remote add swrepo git@github.com:DerSkillBaumApfel/SwDepLab2.git
-      git add package.json -A
-      git commit -m "Test Commit from Azure DevOps"
-      git status
-      git -c http.extraheader="AUTHORIZATION: basic ***" push -u swrepo HEAD:master
+
       
       
       
